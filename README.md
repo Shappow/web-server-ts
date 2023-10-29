@@ -31,3 +31,16 @@ Then click on "Environment variables..."
 You will get the json file of the headers of your request on your browser's page or terminal.  
 
 If the route is wrong you will get a simple response with 404 status code.
+
+# For docker : 
+
+- Install docker if already not done. We advise you to use also docker desktop to have a good view of what is happening with your containers and images
+- Get into the cloned repository :
+- To build the first image use : 
+  > docker build -t [nameofyourimage] -f Dockerfile.1 .
+- To build the second image use : 
+  > docker build -t [nameofyourimage] -f Dockerfile.2 .
+- To run the image use :
+  > docker run -it --rm -p [ThePortYouWantToUse]:[ThePortYouWantToUse] -e PING_LISTEN_PORT=[ThePortYouWantToUse] [nameofyourimage]
+
+

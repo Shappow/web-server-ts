@@ -1,0 +1,19 @@
+FROM node:bookworm-slim AS builder
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+RUN npx tsc 
+
+FROM node:bookworm-slim as exec
+
+WORKDIR /app
+
+COPY . .
+
+CMD node build/index.js
+
+
